@@ -19,7 +19,7 @@
   const offsetPercentage = $derived(quartersRemoved * 25);
 </script>
 
-<div class="container wide">
+<div class="container">
   <Profile
     name={content.profile.name}
     tagline={content.profile.tagline}
@@ -29,6 +29,7 @@
     email={content.profile.email}
     github={content.profile.github}
     linkedin={content.profile.linkedin}
+    bluesky={content.profile.bluesky}
     bio={content.profile.bio}
   />
 
@@ -67,13 +68,12 @@
 <style lang="scss">
   .page-divider-button {
     display: block;
-    max-width: var(--max-width-wide);
-    margin: var(--spacing-xl) auto 0;
-    padding: 0 var(--spacing-md) var(--spacing-xl);
     width: 100%;
     background: none;
     border: none;
     cursor: pointer;
+    padding: 0;
+    margin-top: var(--spacing-xl);
 
     img {
       display: block;

@@ -23,10 +23,11 @@ Next, I'm exploring machine learning tools for document analysis."
   import IconEmail from '$lib/components/Icons/IconEmail.svelte';
   import IconGitHub from '$lib/components/Icons/IconGitHub.svelte';
   import IconLinkedIn from '$lib/components/Icons/IconLinkedIn.svelte';
+  import IconBluesky from '$lib/components/Icons/IconBluesky.svelte';
   import ProfileContactLink from './ProfileContactLink.svelte';
   import ProfileBio from './ProfileBio.svelte';
 
-  let { name, tagline, photo, photoAlt, email, github, linkedin, bio } =
+  let { name, tagline, photo, photoAlt, email, github, linkedin, bluesky, bio } =
     $props();
 
   const contacts = $derived(
@@ -53,6 +54,14 @@ Next, I'm exploring machine learning tools for document analysis."
             label: 'LinkedIn',
             external: true,
             icon: IconLinkedIn,
+          }
+        : null,
+      bluesky
+        ? {
+            href: bluesky,
+            label: 'Bluesky',
+            external: true,
+            icon: IconBluesky,
           }
         : null,
     ].filter(Boolean)
@@ -93,50 +102,50 @@ Next, I'm exploring machine learning tools for document analysis."
   @use '$lib/styles' as *;
 
   .profile {
-    border-top: calc(var(--border-width-accent) * 2) solid var(--color-accent);
-    border-bottom: var(--border-width-divider) solid var(--color-border);
-    margin-bottom: var(--spacing-xl);
-    padding: var(--spacing-md) 0;
+    border-bottom: 3px solid var(--color-border);
+    margin-bottom: var(--spacing-xxl);
+    padding: var(--spacing-lg) 0 var(--spacing-sm);
   }
 
   .profile-hero {
     display: grid;
-    gap: var(--spacing-md);
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-sm);
+    align-items: stretch;
+  }
 
-    @include tablet {
-      grid-template-columns: var(--max-width-image-small) minmax(0, 1fr);
-      align-items: center;
-    }
+  .hero-photo-wrap {
+    grid-column: 1;
+    background: transparent;
+  }
+
+  .hero-copy {
+    grid-column: 2 / 4;
+    container-type: inline-size;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
   }
 
   h1 {
-    font-size: clamp(3.25rem, 7vw, 4.25rem);
+    font-size: clamp(1.5rem, 13cqi, 4.5rem);
     line-height: var(--leading-tight);
     margin: 0;
-    letter-spacing: var(--letter-spacing-tight);
-    margin-bottom: var(--spacing-sm);
-
-    @include mobile {
-      font-size: var(--font-size-display);
-    }
+    white-space: nowrap;
   }
 
   .tagline {
     margin: 0 0 var(--spacing-sm);
-    font-size: var(--font-size-xl);
+    font-size: clamp(var(--font-size-sm), 2.5vw, var(--font-size-xl));
     color: var(--color-text);
     line-height: var(--leading-caption);
     max-width: 42rem;
   }
 
   .hero-photo-wrap {
-    border: var(--border-width-thin) solid var(--color-border);
-    background: var(--color-white);
-    padding: var(--spacing-xs);
-
-    @include mobile {
-      max-width: var(--max-width-image-small);
-    }
+    background: transparent;
   }
 
   .hero-photo-wrap :global(.image-figure) {
@@ -151,16 +160,12 @@ Next, I'm exploring machine learning tools for document analysis."
     object-fit: cover;
     margin: 0;
     background: var(--color-light-gray);
-
-    @include mobile {
-      max-height: 400px;
-    }
   }
 
   .contact {
     list-style: none;
     padding: 0;
-    margin: 0 0 var(--spacing-md);
+    margin: 0 0 6px;
     display: flex;
     flex-wrap: wrap;
     gap: var(--spacing-sm);
