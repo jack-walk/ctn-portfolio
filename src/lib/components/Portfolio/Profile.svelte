@@ -140,14 +140,12 @@ Next, I'm exploring machine learning tools for document analysis."
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow: hidden;
   }
 
   h1 {
     font-size: clamp(1.5rem, 13cqi, 4.5rem);
     line-height: var(--leading-tight);
     margin: 0;
-    white-space: nowrap;
   }
 
   .tagline {
