@@ -24,6 +24,8 @@ and an icon snippet.
 </li>
 
 <style lang="scss">
+  @use '$lib/styles' as *;
+
   .contact-item a {
     display: inline-flex;
     align-items: center;
@@ -46,5 +48,16 @@ and an icon snippet.
     width: var(--font-size-lg);
     height: var(--font-size-lg);
     flex-shrink: 0;
+  }
+
+  @include mobile {
+    .contact-item a {
+      padding: var(--spacing-xxs);
+      gap: 0;
+    }
+
+    .contact-item a span {
+      display: none;
+    }
   }
 </style>

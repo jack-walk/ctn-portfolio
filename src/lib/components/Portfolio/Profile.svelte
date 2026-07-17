@@ -165,7 +165,7 @@ Next, I'm exploring machine learning tools for document analysis."
   .contact {
     list-style: none;
     padding: 0;
-    margin: 0 0 6px;
+    margin: 8px 0 6px 0;
     display: flex;
     flex-wrap: wrap;
     gap: var(--spacing-sm);
