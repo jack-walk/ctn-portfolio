@@ -46,6 +46,19 @@ describe('Profile', () => {
     );
   });
 
+  it('renders a Bluesky link when provided', () => {
+    render(Profile, {
+      props: {
+        name: 'Max Eastman',
+        bluesky: 'https://bsky.app/profile/maxeastman.bsky.social',
+      },
+    });
+    const link = screen.getByRole('link', { name: /bluesky/i });
+    expect(link.getAttribute('href')).toBe(
+      'https://bsky.app/profile/maxeastman.bsky.social'
+    );
+  });
+
   it('does not render contact links when none are provided', () => {
     const { container } = render(Profile, { props: { name: 'Max Eastman' } });
     expect(container.querySelectorAll('.contact li')).toHaveLength(0);
