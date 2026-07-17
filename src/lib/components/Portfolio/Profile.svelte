@@ -117,6 +117,20 @@ Next, I'm exploring machine learning tools for document analysis."
   .hero-photo-wrap {
     grid-column: 1;
     background: transparent;
+
+    :global(.image-figure) {
+      margin: 0;
+    }
+
+    :global(.image) {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      margin: 0;
+      background: var(--color-light-gray);
+    }
   }
 
   .hero-copy {
@@ -142,24 +156,6 @@ Next, I'm exploring machine learning tools for document analysis."
     color: var(--color-text);
     line-height: var(--leading-caption);
     max-width: 42rem;
-  }
-
-  .hero-photo-wrap {
-    background: transparent;
-  }
-
-  .hero-photo-wrap :global(.image-figure) {
-    margin: 0;
-  }
-
-  .hero-photo-wrap :global(.image) {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
-    margin: 0;
-    background: var(--color-light-gray);
   }
 
   .contact {
