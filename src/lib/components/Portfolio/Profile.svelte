@@ -27,8 +27,20 @@ Next, I'm exploring machine learning tools for document analysis."
   import ProfileContactLink from './ProfileContactLink.svelte';
   import ProfileBio from './ProfileBio.svelte';
 
-  let { name, tagline, photo, photoAlt, email, github, linkedin, bluesky, bio } =
-    $props();
+  let {
+    name,
+    tagline,
+    photo,
+    photoAlt,
+    email,
+    github,
+    linkedin,
+    bluesky,
+    bio,
+    bioBubbleImage = '',
+    bioBubbleImageAlt = '',
+    showContacts = true,
+  } = $props();
 
   const contacts = $derived(
     [
@@ -82,18 +94,24 @@ Next, I'm exploring machine learning tools for document analysis."
         <p class="tagline">{tagline}</p>
       {/if}
 
-      <ul class="contact">
-        {#each contacts as contact (contact.label)}
-          <ProfileContactLink
-            href={contact.href}
-            label={contact.label}
-            external={contact.external}
-            icon={contact.icon}
-          />
-        {/each}
-      </ul>
+      {#if showContacts && contacts.length > 0}
+        <ul class="contact">
+          {#each contacts as contact (contact.label)}
+            <ProfileContactLink
+              href={contact.href}
+              label={contact.label}
+              external={contact.external}
+              icon={contact.icon}
+            />
+          {/each}
+        </ul>
+      {/if}
 
-      <ProfileBio text={bio} />
+      <ProfileBio
+        text={bio}
+        bubbleImage={bioBubbleImage}
+        bubbleImageAlt={bioBubbleImageAlt}
+      />
     </div>
   </div>
 </section>
@@ -103,8 +121,8 @@ Next, I'm exploring machine learning tools for document analysis."
 
   .profile {
     border-bottom: 3px solid var(--color-border);
-    margin-bottom: var(--spacing-xxl);
-    padding: var(--spacing-lg) 0 var(--spacing-sm);
+    margin-bottom: var(--content-bar-gap, var(--spacing-md));
+    padding: var(--spacing-lg) 0 var(--content-bar-gap, var(--spacing-md));
   }
 
   .profile-hero {

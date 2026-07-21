@@ -64,6 +64,18 @@ describe('Profile', () => {
     expect(container.querySelectorAll('.contact li')).toHaveLength(0);
   });
 
+  it('can hide contact links even when contact props are provided', () => {
+    const { container } = render(Profile, {
+      props: {
+        name: 'Max Eastman',
+        email: 'max@example.com',
+        showContacts: false,
+      },
+    });
+
+    expect(container.querySelector('.contact')).toBeNull();
+  });
+
   it('renders a photo with the name as default alt text', () => {
     render(Profile, {
       props: { name: 'Max Eastman', photo: '/photos/max.jpg' },
@@ -108,5 +120,19 @@ describe('Profile', () => {
   it('does not render the bio section when bio is omitted', () => {
     const { container } = render(Profile, { props: { name: 'Max Eastman' } });
     expect(container.querySelector('.now-next')).toBeNull();
+  });
+
+  it('renders a custom speech-bubble image when provided', () => {
+    render(Profile, {
+      props: {
+        name: 'Max Eastman',
+        bio: 'A short bio paragraph.',
+        bioBubbleImage: '/photos/custom-bubble.png',
+        bioBubbleImageAlt: 'Hand-drawn speech bubble',
+      },
+    });
+
+    const bubble = screen.getByAltText('Hand-drawn speech bubble');
+    expect(bubble.getAttribute('src')).toBe('/photos/custom-bubble.png');
   });
 });

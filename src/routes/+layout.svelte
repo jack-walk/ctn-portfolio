@@ -17,9 +17,11 @@ Use it for headers, footers, and navigation that appear on all pages.
 
   // In Svelte 5, we use $props() to receive the page content
   let { children } = $props();
+
+  const isServerError = $derived(page.status >= 500);
 </script>
 
-{#if page.data.showHeader !== false}
+{#if !isServerError && page.data?.showHeader !== false}
   <SiteHeader />
 {/if}
 
@@ -28,7 +30,7 @@ Use it for headers, footers, and navigation that appear on all pages.
   {@render children()}
 </main>
 
-{#if page.data.showFooter !== false}
+{#if !isServerError && page.data?.showFooter !== false}
   <SiteFooter />
 {/if}
 

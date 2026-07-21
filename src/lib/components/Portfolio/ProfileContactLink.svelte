@@ -6,10 +6,16 @@ Renders a single list item with a link, optional external behavior,
 and an icon snippet.
 -->
 <script>
-  let { href = '', label = '', external = false, icon = null } = $props();
+  let {
+    href = '',
+    label = '',
+    external = false,
+    icon = null,
+    variant = 'default',
+  } = $props();
 </script>
 
-<li class="contact-item">
+<li class="contact-item {variant}">
   <a
     {href}
     target={external ? '_blank' : undefined}
@@ -26,7 +32,7 @@ and an icon snippet.
 <style lang="scss">
   @use '$lib/styles' as *;
 
-  .contact-item a {
+  .contact-item.default a {
     display: inline-flex;
     align-items: center;
     gap: var(--spacing-xs);
@@ -44,6 +50,23 @@ and an icon snippet.
     }
   }
 
+  .contact-item.banner a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    text-decoration: none;
+    color: var(--color-medium-gray);
+    font-size: var(--font-size-xs);
+    font-family: var(--font-serif);
+    letter-spacing: var(--letter-spacing-wide);
+    text-transform: uppercase;
+    padding: 0;
+  }
+
+  .contact-item.banner a:hover {
+    color: var(--color-accent);
+  }
+
   .contact-item :global(svg) {
     width: var(--font-size-lg);
     height: var(--font-size-lg);
@@ -51,12 +74,12 @@ and an icon snippet.
   }
 
   @include mobile {
-    .contact-item a {
+    .contact-item.default a {
       padding: var(--spacing-xxs);
       gap: 0;
     }
 
-    .contact-item a span {
+    .contact-item.default a span {
       position: absolute;
       width: 1px;
       height: 1px;

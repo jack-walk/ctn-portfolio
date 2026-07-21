@@ -6,10 +6,12 @@ profile:
   github: jack-walk
   linkedin: jacktmwalker
   bluesky: https://bsky.app/profile/jackwalker.bsky.social
+  bioBubbleImage: ''
+  bioBubbleImageAlt: ''
   bio: |
-    I’m a data journalist and writer based in Brooklyn. I often report on health, government, LGBTQ+ rights and the social safety net.
+    I’m a data journalist based in Brooklyn. I cover topics like government, LGBTQ+ rights, health and the social safety net.
 
-    I’ve contributed to Reuters, WNYC, The Advocate, Them, WVPB and Pittsburgh's Public Source, among other outlets. I’m originally from rural Maryland.
+    I’ve contributed to outlets like Reuters, WNYC, The Advocate, Them, WVPB and Pittsburgh’s Public Source. And beyond!
 clips:
   - slug: xmas
     title: Christmas tree disposal requests spiked last holiday

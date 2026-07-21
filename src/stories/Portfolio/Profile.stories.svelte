@@ -33,6 +33,9 @@
       github: 'maxeastman',
       linkedin: 'maxeastman',
       bio: '',
+      bioBubbleImage: '',
+      bioBubbleImageAlt: '',
+      showContacts: true,
     },
     argTypes: {
       name: {
@@ -71,6 +74,21 @@
         description:
           'Optional bio text. Separate paragraphs with a blank line.',
       },
+      bioBubbleImage: {
+        control: 'text',
+        description:
+          'Optional custom speech-bubble image URL/path (for example /photos/my-bubble.png).',
+      },
+      bioBubbleImageAlt: {
+        control: 'text',
+        description:
+          'Optional alt text for the custom speech-bubble image layer.',
+      },
+      showContacts: {
+        control: 'boolean',
+        description:
+          'Whether to render the contact link row inside the profile hero.',
+      },
     },
   });
 </script>
@@ -107,8 +125,7 @@
 <Story
   name="With Bio"
   args={{
-    bio:
-      "I am the editor of The Masses, a monthly socialist magazine covering politics, art, and culture from New York City.\n\nNext, I am reporting on labor conditions in the garment district and translating Trotsky's writings for American readers.",
+    bio: "I am the editor of The Masses, a monthly socialist magazine covering politics, art, and culture from New York City.\n\nNext, I am reporting on labor conditions in the garment district and translating Trotsky's writings for American readers.",
   }}
 >
   {#snippet children(args)}
