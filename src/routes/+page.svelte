@@ -97,10 +97,7 @@
     showContacts={false}
   />
 
-  <ProfilePanelsScaffold
-    clickLabel={homepageSections.profilePanels.clickLabel}
-    panels={homepageSections.profilePanels.panels}
-  />
+  <ProfilePanelsScaffold panels={homepageSections.profilePanels.panels} />
 
   <Rule />
 
