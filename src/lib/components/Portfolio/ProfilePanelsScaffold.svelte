@@ -16,7 +16,7 @@ for real content later.
 </script>
 
 <section class="profile-panels" aria-label="Portfolio details">
-  <div class="panel-buttons" role="tablist" aria-label="Portfolio detail tabs">
+  <div class="panel-buttons" aria-label="Portfolio detail sections">
     {#each panels as panel, i (panel.id)}
       <div class="panel-slot" style={`--slot-index: ${i};`}>
         <button
