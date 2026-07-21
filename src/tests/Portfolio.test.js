@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/svelte';
+import { render, screen, fireEvent } from '@testing-library/svelte';
 import Profile from '$lib/components/Portfolio/Profile.svelte';
+import ProfilePanelsScaffold from '$lib/components/Portfolio/ProfilePanelsScaffold.svelte';
 
 describe('Profile', () => {
   it('renders the name as a heading', () => {
@@ -134,5 +135,61 @@ describe('Profile', () => {
 
     const bubble = screen.getByAltText('Hand-drawn speech bubble');
     expect(bubble.getAttribute('src')).toBe('/photos/custom-bubble.png');
+  });
+});
+
+const SAMPLE_PANELS = [
+  { id: 'resume', title: 'Résumé', placeholder: 'Work experience here.' },
+  { id: 'skills', title: 'Skills', placeholder: 'Skills here.' },
+  { id: 'awards', title: 'Awards', placeholder: 'Awards here.' },
+];
+
+describe('ProfilePanelsScaffold', () => {
+  it('renders a button for each panel', () => {
+    render(ProfilePanelsScaffold, { props: { panels: SAMPLE_PANELS } });
+    expect(screen.getByRole('button', { name: /résumé/i })).toBeTruthy();
+    expect(screen.getByRole('button', { name: /skills/i })).toBeTruthy();
+    expect(screen.getByRole('button', { name: /awards/i })).toBeTruthy();
+  });
+
+  it('renders no content panels on initial load', () => {
+    const { container } = render(ProfilePanelsScaffold, {
+      props: { panels: SAMPLE_PANELS },
+    });
+    expect(container.querySelectorAll('.panel-content')).toHaveLength(0);
+  });
+
+  it('expands a panel when its button is clicked', async () => {
+    render(ProfilePanelsScaffold, { props: { panels: SAMPLE_PANELS } });
+    const btn = screen.getByRole('button', { name: /résumé/i });
+    await fireEvent.click(btn);
+    expect(screen.getByText('Work experience here.')).toBeTruthy();
+  });
+
+  it('collapses an open panel when its button is clicked again', async () => {
+    const { container } = render(ProfilePanelsScaffold, {
+      props: { panels: SAMPLE_PANELS },
+    });
+    const btn = screen.getByRole('button', { name: /résumé/i });
+    await fireEvent.click(btn);
+    await fireEvent.click(btn);
+    expect(container.querySelectorAll('.panel-content')).toHaveLength(0);
+  });
+
+  it('only one panel is open at a time', async () => {
+    const { container } = render(ProfilePanelsScaffold, {
+      props: { panels: SAMPLE_PANELS },
+    });
+    await fireEvent.click(screen.getByRole('button', { name: /résumé/i }));
+    await fireEvent.click(screen.getByRole('button', { name: /skills/i }));
+    expect(container.querySelectorAll('.panel-content')).toHaveLength(1);
+    expect(screen.getByText('Skills here.')).toBeTruthy();
+  });
+
+  it('renders nothing when panels is empty', () => {
+    const { container } = render(ProfilePanelsScaffold, {
+      props: { panels: [] },
+    });
+    expect(container.querySelectorAll('.panel-toggle')).toHaveLength(0);
   });
 });
