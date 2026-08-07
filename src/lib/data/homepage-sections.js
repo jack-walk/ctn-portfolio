@@ -10,11 +10,11 @@ const homepageSections = {
             <h3>Data Experience</h3>
             <ul>
               <li>
-                <strong>REUTERS.</strong> Data Journalism Intern<br />
+                <strong>Reuters:</strong> Data Journalism Intern<br />
                 <span>June 2026 to September 2026 | New York, NY</span>
               </li>
               <li>
-                <strong>ASSOCIATED PRESS.</strong> Elections Automated Web Scraper (Freelance)<br />
+                <strong>Associated Press:</strong> Elections Automated Web Scraper<br />
                 <span>Oct. 2025 to Present | Remote</span>
               </li>
             </ul>
@@ -22,7 +22,7 @@ const homepageSections = {
             <h3>Local News Experience</h3>
             <ul>
               <li>
-                <strong>THE ADVOCATE.</strong> Reporting Fellow<br />
+                <strong>The Advocate:</strong> Reporting Fellow<br />
                 <span>Jan. 2026 to June 2026 | New York, NY</span>
               </li>
               <li>
@@ -30,11 +30,11 @@ const homepageSections = {
                 <span>Jan. 2026 to June 2026 | New York, NY</span>
               </li>
               <li>
-                <strong>WEST VIRGINIA PUBLIC BROADCASTING.</strong> Statehouse and Regional Reporter<br />
+                <strong>West Virginia Public Broadcasting:</strong> Statehouse and Regional Reporter<br />
                 <span>Jan. 2024 to Aug. 2025 | Charleston and Shepherdstown, West Virginia</span>
               </li>
               <li>
-                <strong>TIMES WEST VIRGINIAN.</strong> General Assignment Reporter<br />
+                <strong>Times West Virginian:</strong> General Assignment Reporter<br />
                 <span>July to Dec. 2023 | Fairmont, West Virginia</span>
               </li>
             </ul>
@@ -78,13 +78,13 @@ const homepageSections = {
         content: `
           <section>
             <ul>
-              <li><strong>Best Light Feature, Second Place</strong><br /><span>West Virginia Public Broadcasting · March 2026</span></li>
-              <li><strong>Best Multi-Platform Story, Second Place</strong><br /><span>West Virginia Public Broadcasting · March 2026</span></li>
-              <li><strong>Best Spot News, Second Place</strong><br /><span>West Virginia Public Broadcasting · March 2026</span></li>
-              <li><strong>Excellence in Multimedia, First Place</strong><br /><span>West Virginia Public Broadcasting · June 2025</span></li>
-              <li><strong>Best MMJ/One-Person Band Reporter, Second Place</strong><br /><span>West Virginia Public Broadcasting · April 2025</span></li>
-              <li><strong>Best Spot News, First Place</strong><br /><span>West Virginia Public Broadcasting · April 2025</span></li>
-              <li><strong>Best Coverage of Breaking News, Second Place</strong><br /><span>Times West Virginian · August 2024</span></li>
+              <li><strong>Best Light Feature, Second Place</strong><br /><span>Virginia AP Broadcasters · March 2026</span></li>
+              <li><strong>Best Multi-Platform Story, Second Place</strong><br /><span>Virginia AP Broadcasters · March 2026</span></li>
+              <li><strong>Best Spot News, Second Place</strong><br /><span>Virginia AP Broadcasters · March 2026</span></li>
+              <li><strong>Excellence in Multimedia, First Place</strong><br /><span>Public Media Journalists Association · June 2025</span></li>
+              <li><strong>Best MMJ/One-Person Band Reporter, Second Place</strong><br /><span>Virginia AP Broadcasters · April 2025</span></li>
+              <li><strong>Best Spot News, First Place</strong><br /><span>Virginia AP Broadcasters · April 2025</span></li>
+              <li><strong>Best Coverage of Breaking News, Second Place</strong><br /><span>West Virginia Press Association · August 2024</span></li>
             </ul>
           </section>
         `,

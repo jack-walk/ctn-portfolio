@@ -6,7 +6,7 @@ Creates structured rows for future linked clip content grouped by beat.
 -->
 <script>
   let {
-    heading = "I've done lots and lots of reporting. Here's my reporting on:",
+    heading = "Find my reporting on:",
     clipGroups = [],
   } = $props();
 </script>

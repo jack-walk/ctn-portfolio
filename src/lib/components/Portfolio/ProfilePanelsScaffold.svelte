@@ -87,7 +87,8 @@ for real content later.
   }
 
   .panel-toggle.active {
-    border-bottom-color: var(--color-white);
+    color: var(--color-accent);
+    border-color: var(--color-accent);
     position: relative;
     z-index: 2;
   }
