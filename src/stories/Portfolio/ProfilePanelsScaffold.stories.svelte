@@ -7,7 +7,7 @@
   only one panel is open at a time.
 
   Props:
-  - panels: Array of { id, title, placeholder } objects; defaults to []
+  - panels: Array of { id, title, content? | placeholder? } objects; defaults to []
 -->
 <script module>
   import { defineMeta } from '@storybook/addon-svelte-csf';
@@ -22,7 +22,8 @@
         {
           id: 'resume',
           title: 'Résumé',
-          placeholder: 'Add your work experience here.',
+          content:
+            '<h3>Professional Experience</h3><ul><li><strong>Newsroom Role</strong><br />Dates | Location</li></ul>',
         },
         {
           id: 'skills',
@@ -40,7 +41,7 @@
       panels: {
         control: 'object',
         description:
-          'Array of panel objects, each with id, title, and placeholder strings.',
+          'Array of panel objects, each with id/title and either content (HTML) or placeholder text.',
       },
     },
   });
@@ -72,7 +73,8 @@
       {
         id: 'resume',
         title: 'Résumé',
-        placeholder: 'Add your work experience here.',
+        content:
+          '<h3>Professional Experience</h3><ul><li><strong>Newsroom Role</strong><br />Dates | Location</li></ul>',
       },
     ],
   }}

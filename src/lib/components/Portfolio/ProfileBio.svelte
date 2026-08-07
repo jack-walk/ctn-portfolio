@@ -5,22 +5,16 @@ ProfileBio.svelte — Reusable paragraph block for Profile bio text.
 Accepts a string and renders paragraphs separated by blank lines.
 -->
 <script>
-  import SpeechBubble from './SpeechBubble.svelte';
-
-  let { text = '', bubbleImage = '', bubbleImageAlt = '' } = $props();
+  let { text = '' } = $props();
 
   let paragraphs = $derived(text ? text.trim().split('\n\n') : []);
 </script>
 
 {#if paragraphs.length > 0}
   <div class="now-next">
-    <SpeechBubble {bubbleImage} {bubbleImageAlt}>
-      {#snippet children()}
-        {#each paragraphs as para, i (i)}
-          <p>{para}</p>
-        {/each}
-      {/snippet}
-    </SpeechBubble>
+    {#each paragraphs as para, i (i)}
+      <p>{para}</p>
+    {/each}
   </div>
 {/if}
 

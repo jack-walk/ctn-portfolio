@@ -33,8 +33,6 @@
       github: 'maxeastman',
       linkedin: 'maxeastman',
       bio: '',
-      bioBubbleImage: '',
-      bioBubbleImageAlt: '',
       showContacts: true,
     },
     argTypes: {
@@ -73,16 +71,6 @@
         control: 'text',
         description:
           'Optional bio text. Separate paragraphs with a blank line.',
-      },
-      bioBubbleImage: {
-        control: 'text',
-        description:
-          'Optional custom speech-bubble image URL/path (for example /photos/my-bubble.png).',
-      },
-      bioBubbleImageAlt: {
-        control: 'text',
-        description:
-          'Optional alt text for the custom speech-bubble image layer.',
       },
       showContacts: {
         control: 'boolean',

@@ -37,8 +37,6 @@ Next, I'm exploring machine learning tools for document analysis."
     linkedin,
     bluesky,
     bio,
-    bioBubbleImage = '',
-    bioBubbleImageAlt = '',
     showContacts = true,
   } = $props();
 
@@ -107,11 +105,7 @@ Next, I'm exploring machine learning tools for document analysis."
         </ul>
       {/if}
 
-      <ProfileBio
-        text={bio}
-        bubbleImage={bioBubbleImage}
-        bubbleImageAlt={bioBubbleImageAlt}
-      />
+      <ProfileBio text={bio} />
     </div>
   </div>
 </section>
@@ -157,7 +151,8 @@ Next, I'm exploring machine learning tools for document analysis."
     min-width: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: var(--spacing-xs);
   }
 
   h1 {

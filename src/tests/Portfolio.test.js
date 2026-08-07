@@ -122,20 +122,6 @@ describe('Profile', () => {
     const { container } = render(Profile, { props: { name: 'Max Eastman' } });
     expect(container.querySelector('.now-next')).toBeNull();
   });
-
-  it('renders a custom speech-bubble image when provided', () => {
-    render(Profile, {
-      props: {
-        name: 'Max Eastman',
-        bio: 'A short bio paragraph.',
-        bioBubbleImage: '/photos/custom-bubble.png',
-        bioBubbleImageAlt: 'Hand-drawn speech bubble',
-      },
-    });
-
-    const bubble = screen.getByAltText('Hand-drawn speech bubble');
-    expect(bubble.getAttribute('src')).toBe('/photos/custom-bubble.png');
-  });
 });
 
 const SAMPLE_PANELS = [

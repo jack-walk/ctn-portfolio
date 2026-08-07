@@ -92,8 +92,6 @@
     linkedin={content.profile.linkedin}
     bluesky={content.profile.bluesky}
     bio={content.profile.bio}
-    bioBubbleImage={content.profile.bioBubbleImage}
-    bioBubbleImageAlt={content.profile.bioBubbleImageAlt}
     showContacts={false}
   />
 

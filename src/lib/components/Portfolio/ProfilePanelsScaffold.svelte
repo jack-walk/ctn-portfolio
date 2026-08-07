@@ -33,7 +33,11 @@ for real content later.
 
         {#if openPanel === panel.id}
           <article id={`panel-content-${panel.id}`} class="panel-content">
-            <p>{panel.placeholder}</p>
+            {#if panel.content}
+              {@html panel.content}
+            {:else}
+              <p>{panel.placeholder}</p>
+            {/if}
           </article>
         {/if}
       </div>
@@ -123,6 +127,31 @@ for real content later.
     color: var(--color-medium-gray);
     font-size: var(--font-size-sm);
     line-height: var(--leading-caption);
+  }
+
+  .panel-content :global(h3) {
+    margin: var(--spacing-xs) 0;
+    font-family: var(--font-serif);
+    font-size: var(--font-size-md);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+    color: var(--color-text);
+  }
+
+  .panel-content :global(ul) {
+    margin: 0 0 var(--spacing-sm);
+    padding-left: var(--spacing-md);
+  }
+
+  .panel-content :global(li) {
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-medium-gray);
+    font-size: var(--font-size-sm);
+    line-height: var(--leading-caption);
+  }
+
+  .panel-content :global(strong) {
+    color: var(--color-text);
   }
 
   @include mobile {
