@@ -210,7 +210,7 @@
   }
 
   .last-updated {
-    margin: 0;
+    margin: 2.5rem 0 0;
     text-align: center;
     font-size: var(--font-size-xs);
     letter-spacing: var(--letter-spacing-wide);

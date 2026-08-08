@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/svelte';
+import ClipsScaffold from '$lib/components/Portfolio/ClipsScaffold.svelte';
 import Profile from '$lib/components/Portfolio/Profile.svelte';
 import ProfilePanelsScaffold from '$lib/components/Portfolio/ProfilePanelsScaffold.svelte';
 
@@ -107,7 +108,7 @@ describe('Profile', () => {
     expect(img.getAttribute('src')).toBe('https://example.com/max.jpg');
   });
 
-  it('renders bio bio paragraphs', () => {
+  it('renders bio paragraphs', () => {
     render(Profile, {
       props: {
         name: 'Max Eastman',
@@ -177,5 +178,55 @@ describe('ProfilePanelsScaffold', () => {
       props: { panels: [] },
     });
     expect(container.querySelectorAll('.panel-toggle')).toHaveLength(0);
+  });
+});
+
+describe('ClipsScaffold', () => {
+  it('renders featured card images when provided', () => {
+    render(ClipsScaffold, {
+      props: {
+        clipGroups: [
+          {
+            label: 'Data',
+            items: [
+              {
+                headline: 'Mapped story',
+                href: '#',
+                featured: true,
+                image: '/photos/storybook/data-dashboard.png',
+                imageAlt: 'Sample dashboard graphic',
+              },
+            ],
+          },
+        ],
+      },
+    });
+
+    const image = screen.getByAltText('Sample dashboard graphic');
+    expect(image.getAttribute('src')).toContain(
+      '/photos/storybook/data-dashboard.png'
+    );
+  });
+
+  it('keeps a placeholder area for featured cards without images', () => {
+    const { container } = render(ClipsScaffold, {
+      props: {
+        clipGroups: [
+          {
+            label: 'Audio',
+            items: [
+              {
+                headline: 'Placeholder audio story',
+                href: '#',
+                featured: true,
+              },
+            ],
+          },
+        ],
+      },
+    });
+
+    expect(container.querySelector('.thumb--placeholder')).toBeTruthy();
+    expect(screen.getByText('Image placeholder')).toBeTruthy();
   });
 });
