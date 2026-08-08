@@ -1,6 +1,5 @@
 const homepageSections = {
   profilePanels: {
-    clickLabel: 'CLICK!',
     panels: [
       {
         id: 'resume',
@@ -22,7 +21,7 @@ const homepageSections = {
               {
                 label: 'Brown University Library:',
                 text: ' GIS and Data Associate',
-                meta: 'Sept. 2025 to May 2023 | Providence, RI',
+                meta: 'Sept. 2022 to May 2023 | Providence, RI',
               },
             ],
           },
