@@ -131,6 +131,24 @@ const SAMPLE_PANELS = [
   { id: 'awards', title: 'Awards', placeholder: 'Awards here.' },
 ];
 
+const SAMPLE_CONTENT_PANELS = [
+  {
+    id: 'resume',
+    title: 'Résumé',
+    content: [
+      {
+        heading: 'Professional Experience',
+        items: [
+          {
+            label: 'Newsroom Role',
+            meta: 'Dates | Location',
+          },
+        ],
+      },
+    ],
+  },
+];
+
 describe('ProfilePanelsScaffold', () => {
   it('renders a button for each panel', () => {
     render(ProfilePanelsScaffold, { props: { panels: SAMPLE_PANELS } });
@@ -178,6 +196,14 @@ describe('ProfilePanelsScaffold', () => {
       props: { panels: [] },
     });
     expect(container.querySelectorAll('.panel-toggle')).toHaveLength(0);
+  });
+
+  it('renders structured panel content without injecting HTML strings', async () => {
+    render(ProfilePanelsScaffold, { props: { panels: SAMPLE_CONTENT_PANELS } });
+    await fireEvent.click(screen.getByRole('button', { name: /résumé/i }));
+    expect(screen.getByText('Professional Experience')).toBeTruthy();
+    expect(screen.getByText('Newsroom Role')).toBeTruthy();
+    expect(screen.getByText('Dates | Location')).toBeTruthy();
   });
 });
 

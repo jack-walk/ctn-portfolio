@@ -5,100 +5,138 @@ const homepageSections = {
       {
         id: 'resume',
         title: 'RESUME',
-        content: `
-          <section>
-            <h3>Data Experience</h3>
-            <ul>
-              <li>
-                <strong>Reuters:</strong> Data Journalism Intern<br />
-                <span>June 2026 to September 2026 | New York, NY</span>
-              </li>
-              <li>
-                <strong>Associated Press:</strong> Elections Automated Web Scraper<br />
-                <span>Oct. 2025 to Present | Remote</span>
-              </li>
-              <li>
-                <strong>Brown University Library:</strong> GIS and Data Associate<br />
-                <span>Sept. 2025 to May 2023 | Providence, RI</span>
-              </li>
-            </ul>
-
-            <h3>Local News Experience</h3>
-            <ul>
-              <li>
-                <strong>The Advocate:</strong> Reporting Fellow<br />
-                <span>Jan. 2026 to June 2026 | New York, NY</span>
-              </li>
-              <li>
-                <strong>WNYC.</strong> Audio Production Intern<br />
-                <span>Jan. 2026 to June 2026 | New York, NY</span>
-              </li>
-              <li>
-                <strong>West Virginia Public Broadcasting:</strong> Statehouse and Regional Reporter<br />
-                <span>Jan. 2024 to Aug. 2025 | Charleston and Shepherdstown, West Virginia</span>
-              </li>
-              <li>
-                <strong>Times West Virginian:</strong> General Assignment Reporter<br />
-                <span>July to Dec. 2023 | Fairmont, West Virginia</span>
-              </li>
-            </ul>
-
-            <h3>Undergraduate Experience</h3>
-            <ul>
-              <li>
-                <strong>The Brown Daily Herald:</strong> Senior Editor<br />
-                <span>Dec. 2021 to Dec. 2022 | Providence, Rhode Island</span>
-              </li>
-              <li>
-                <strong>Washington Blade:</strong> Editorial Fellow<br />
-                <span>May to Sept. 2022 | Rehoboth Beach, Delaware</span>
-              </li>
-            </ul>
-          </section>
-        `,
+        content: [
+          {
+            heading: 'Data Experience',
+            items: [
+              {
+                label: 'Reuters:',
+                text: ' Data Journalism Intern',
+                meta: 'June 2026 to September 2026 | New York, NY',
+              },
+              {
+                label: 'Associated Press:',
+                text: ' Elections Automated Web Scraper',
+                meta: 'Oct. 2025 to Present | Remote',
+              },
+              {
+                label: 'Brown University Library:',
+                text: ' GIS and Data Associate',
+                meta: 'Sept. 2025 to May 2023 | Providence, RI',
+              },
+            ],
+          },
+          {
+            heading: 'Local News Experience',
+            items: [
+              {
+                label: 'The Advocate:',
+                text: ' Reporting Fellow',
+                meta: 'Jan. 2026 to June 2026 | New York, NY',
+              },
+              {
+                label: 'WNYC.',
+                text: ' Audio Production Intern',
+                meta: 'Jan. 2026 to June 2026 | New York, NY',
+              },
+              {
+                label: 'West Virginia Public Broadcasting:',
+                text: ' Statehouse and Regional Reporter',
+                meta: 'Jan. 2024 to Aug. 2025 | Charleston and Shepherdstown, West Virginia',
+              },
+              {
+                label: 'Times West Virginian:',
+                text: ' General Assignment Reporter',
+                meta: 'July to Dec. 2023 | Fairmont, West Virginia',
+              },
+            ],
+          },
+          {
+            heading: 'Undergraduate Experience',
+            items: [
+              {
+                label: 'The Brown Daily Herald:',
+                text: ' Senior Editor',
+                meta: 'Dec. 2021 to Dec. 2022 | Providence, Rhode Island',
+              },
+              {
+                label: 'Washington Blade:',
+                text: ' Editorial Fellow',
+                meta: 'May to Sept. 2022 | Rehoboth Beach, Delaware',
+              },
+            ],
+          },
+        ],
       },
       {
         id: 'skills',
         title: 'SKILLS',
-        content: `
-          <section>
-            <ul>
-              <li>
-                <strong>Data:</strong> Python, pandas, Excel. HTML, CSS, JavaScript, Svelte. Datawrapper, Flourish, GIS. Web scraping.
-              </li>
-              <li>
-                <strong>Audio and Visual:</strong> ProTools, Adobe Audition, Photoshop, Adobe Premiere, Lightroom.
-              </li>
-              <li>
-                <strong>Language:</strong> Fluent in Spanish. Intermediate ability in Korean and American Sign Language.
-              </li>
-            </ul>
-          </section>
-        `,
+        content: [
+          {
+            items: [
+              {
+                label: 'Data:',
+                text: ' Python, pandas, Excel. HTML, CSS, JavaScript, Svelte. Datawrapper, Flourish, GIS. Web scraping.',
+              },
+              {
+                label: 'Audio and Visual:',
+                text: ' ProTools, Adobe Audition, Photoshop, Adobe Premiere, Lightroom.',
+              },
+              {
+                label: 'Language:',
+                text: ' Fluent in Spanish. Intermediate ability in Korean and American Sign Language.',
+              },
+            ],
+          },
+        ],
       },
       {
         id: 'awards',
         title: 'AWARDS',
-        content: `
-          <section>
-            <ul>
-              <li><strong>Lorana Sullivan Scholarship</strong><br /><span>Craig Newmark School of Journalism · 2025-2026</span></li>
-              <li><strong>Best Light Feature, Second Place</strong><br /><span>Virginia AP Broadcasters · March 2026</span></li>
-              <li><strong>Best Multi-Platform Story, Second Place</strong><br /><span>Virginia AP Broadcasters · March 2026</span></li>
-              <li><strong>Best Spot News, Second Place</strong><br /><span>Virginia AP Broadcasters · March 2026</span></li>
-              <li><strong>Excellence in Multimedia, First Place</strong><br /><span>Public Media Journalists Association · June 2025</span></li>
-              <li><strong>Best MMJ/One-Person Band Reporter, Second Place</strong><br /><span>Virginia AP Broadcasters · April 2025</span></li>
-              <li><strong>Best Spot News, First Place</strong><br /><span>Virginia AP Broadcasters · April 2025</span></li>
-              <li><strong>Best Coverage of Breaking News, Second Place</strong><br /><span>West Virginia Press Association · August 2024</span></li>
-            </ul>
-          </section>
-        `,
+        content: [
+          {
+            items: [
+              {
+                label: 'Lorana Sullivan Scholarship',
+                meta: 'Craig Newmark School of Journalism · 2025-2026',
+              },
+              {
+                label: 'Best Light Feature, Second Place',
+                meta: 'Virginia AP Broadcasters · March 2026',
+              },
+              {
+                label: 'Best Multi-Platform Story, Second Place',
+                meta: 'Virginia AP Broadcasters · March 2026',
+              },
+              {
+                label: 'Best Spot News, Second Place',
+                meta: 'Virginia AP Broadcasters · March 2026',
+              },
+              {
+                label: 'Excellence in Multimedia, First Place',
+                meta: 'Public Media Journalists Association · June 2025',
+              },
+              {
+                label: 'Best MMJ/One-Person Band Reporter, Second Place',
+                meta: 'Virginia AP Broadcasters · April 2025',
+              },
+              {
+                label: 'Best Spot News, First Place',
+                meta: 'Virginia AP Broadcasters · April 2025',
+              },
+              {
+                label: 'Best Coverage of Breaking News, Second Place',
+                meta: 'West Virginia Press Association · August 2024',
+              },
+            ],
+          },
+        ],
       },
     ],
   },
 
   clipsScaffold: {
-    heading: 'I\'ve reported on...',
+    heading: "I've reported on...",
     clipGroups: [
       {
         label: '(DATA STORIES)',
@@ -141,14 +179,16 @@ const homepageSections = {
             href: 'https://www.advocate.com/politics/stonewall-pride-flag-activism-trump',
             featured: true,
             image: '/photos/stonewall.avif',
-            imageAlt: 'A protester raises a fist and a sign outside Stonewall Inn.',
+            imageAlt:
+              'A protester raises a fist and a sign outside Stonewall Inn.',
           },
           {
             headline: 'HIV fundraising.',
             href: 'https://www.advocate.com/politics/advocacy/aids-walk-new-york-2026',
             featured: true,
             image: '/photos/aidswalk.avif',
-            imageAlt: 'A volunteer guideas participants in AIDS Walk New York 2026.',
+            imageAlt:
+              'A volunteer guideas participants in AIDS Walk New York 2026.',
           },
         ],
       },
@@ -193,14 +233,16 @@ const homepageSections = {
             href: 'https://wvpublic.org/story/energy-environment/bottling-plant-proposal-evokes-familiar-corporate-land-use-concerns/',
             featured: true,
             image: '/photos/middleway.jpg',
-            imageAlt: 'A woman stands in a village street holding a black-and-white photo of what the street used to look like.',
+            imageAlt:
+              'A woman stands in a village street holding a black-and-white photo of what the street used to look like.',
           },
           {
             headline: 'Palantir protests.',
             href: 'https://www.advocate.com/politics/advocacy/act-up-palantir-nyc-protest',
             featured: true,
             image: '/photos/palantir.avif',
-            imageAlt: 'Protesters lay in a street for a \'die-in\' demonstration.',
+            imageAlt:
+              "Protesters lay in a street for a 'die-in' demonstration.",
           },
         ],
       },

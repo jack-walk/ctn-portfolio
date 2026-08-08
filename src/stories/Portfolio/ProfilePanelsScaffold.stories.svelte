@@ -22,8 +22,17 @@
         {
           id: 'resume',
           title: 'Résumé',
-          content:
-            '<h3>Professional Experience</h3><ul><li><strong>Newsroom Role</strong><br />Dates | Location</li></ul>',
+          content: [
+            {
+              heading: 'Professional Experience',
+              items: [
+                {
+                  label: 'Newsroom Role',
+                  meta: 'Dates | Location',
+                },
+              ],
+            },
+          ],
         },
         {
           id: 'skills',
@@ -41,7 +50,7 @@
       panels: {
         control: 'object',
         description:
-          'Array of panel objects, each with id/title and either content (HTML) or placeholder text.',
+          'Array of panel objects, each with id/title and either structured content data or placeholder text.',
       },
     },
   });
@@ -73,8 +82,17 @@
       {
         id: 'resume',
         title: 'Résumé',
-        content:
-          '<h3>Professional Experience</h3><ul><li><strong>Newsroom Role</strong><br />Dates | Location</li></ul>',
+        content: [
+          {
+            heading: 'Professional Experience',
+            items: [
+              {
+                label: 'Newsroom Role',
+                meta: 'Dates | Location',
+              },
+            ],
+          },
+        ],
       },
     ],
   }}

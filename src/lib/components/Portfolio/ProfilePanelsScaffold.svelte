@@ -34,7 +34,30 @@ for real content later.
         {#if openPanel === panel.id}
           <article id={`panel-content-${panel.id}`} class="panel-content">
             {#if panel.content}
-              {@html panel.content}
+              {#each panel.content as section, sectionIndex (section.heading ?? sectionIndex)}
+                {#if section.heading}
+                  <h3>{section.heading}</h3>
+                {/if}
+
+                {#if section.items?.length}
+                  <ul>
+                    {#each section.items as item, itemIndex (item.label ?? item.meta ?? item.text ?? itemIndex)}
+                      <li>
+                        {#if item.label}
+                          <strong>{item.label}</strong>
+                        {/if}
+                        {#if item.text}
+                          {item.text}
+                        {/if}
+                        {#if item.meta}
+                          <br />
+                          <span>{item.meta}</span>
+                        {/if}
+                      </li>
+                    {/each}
+                  </ul>
+                {/if}
+              {/each}
             {:else}
               <p>{panel.placeholder}</p>
             {/if}
@@ -177,5 +200,4 @@ for real content later.
       background: var(--color-border);
     }
   }
-
 </style>
