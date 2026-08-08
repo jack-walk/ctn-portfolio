@@ -17,6 +17,10 @@ const homepageSections = {
                 <strong>Associated Press:</strong> Elections Automated Web Scraper<br />
                 <span>Oct. 2025 to Present | Remote</span>
               </li>
+              <li>
+                <strong>Brown University Library:</strong> GIS and Data Associate<br />
+                <span>Sept. 2025 to May 2023 | Providence, RI</span>
+              </li>
             </ul>
 
             <h3>Local News Experience</h3>
@@ -93,25 +97,29 @@ const homepageSections = {
   },
 
   clipsScaffold: {
-    heading: '',
+    heading: 'I\'ve reported on...',
+    // This data file does NOT define clip image sources.
+    // If placeholder images appear, check render logic in:
+    // - src/lib/components/Portfolio/ClipsScaffold.svelte
+    // - its child clip/card component(s) and related SCSS.
     clipGroups: [
       {
-        label: 'Data',
+        label: '(DATA)',
         items: [
           {
-            headline: 'Placeholder featured data story headline',
-            href: '#',
+            headline: 'Tree troubles.',
+            href: 'https://jack-walk.github.io/marine-park-trees/',
             featured: true,
           },
           {
-            headline: 'Placeholder secondary data headline',
-            href: '#',
-            featured: false,
+            headline: 'Wedding officiants.',
+            href: 'https://howweloveinnyc.nycitynewsservice.com/how-25-and-24-hours-can-make-a-wedding-official/',
+            featured: true,
           },
           {
-            headline: 'Placeholder secondary data headline',
-            href: '#',
-            featured: false,
+            headline: 'Christmas complaints.',
+            href: 'https://jack-walk.github.io/dc-xmas-trees/',
+            featured: true,
           },
         ],
       },
@@ -121,7 +129,7 @@ const homepageSections = {
           {
             headline: 'Placeholder secondary LGBTQ+ headline',
             href: '#',
-            featured: false,
+            featured: true,
           },
           {
             headline: 'Placeholder featured LGBTQ+ story headline',
@@ -131,7 +139,7 @@ const homepageSections = {
           {
             headline: 'Placeholder secondary LGBTQ+ headline',
             href: '#',
-            featured: false,
+            featured: true,
           },
         ],
       },
@@ -141,12 +149,12 @@ const homepageSections = {
           {
             headline: 'Placeholder secondary health headline',
             href: '#',
-            featured: false,
+            featured: true,
           },
           {
             headline: 'Placeholder secondary health headline',
             href: '#',
-            featured: false,
+            featured: true,
           },
           {
             headline: 'Placeholder featured health story headline',
@@ -166,12 +174,12 @@ const homepageSections = {
           {
             headline: 'Placeholder secondary audio headline',
             href: '#',
-            featured: false,
+            featured: true,
           },
           {
             headline: 'Placeholder secondary audio headline',
             href: '#',
-            featured: false,
+            featured: true,
           },
         ],
       },
@@ -181,7 +189,7 @@ const homepageSections = {
           {
             headline: 'Placeholder secondary miscellany headline',
             href: '#',
-            featured: false,
+            featured: true,
           },
           {
             headline: 'Placeholder featured miscellany story headline',
@@ -191,7 +199,7 @@ const homepageSections = {
           {
             headline: 'Placeholder secondary miscellany headline',
             href: '#',
-            featured: false,
+            featured: true,
           },
         ],
       },

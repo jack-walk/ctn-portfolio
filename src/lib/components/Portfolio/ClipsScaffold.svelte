@@ -6,7 +6,7 @@ Creates structured rows for future linked clip content grouped by beat.
 -->
 <script>
   let {
-    heading = "Find my reporting on:",
+    heading = "I've reported on...",
     clipGroups = [],
   } = $props();
 </script>
@@ -42,10 +42,9 @@ Creates structured rows for future linked clip content grouped by beat.
   }
 
   .clips-scaffold h2 {
-    margin: 0;
-    font-family: var(--font-display);
     font-size: clamp(var(--font-size-2xl), 4.5vw, var(--font-size-5xl));
-    line-height: var(--leading-snug);
+    line-height: var(--leading-tight);
+    margin: 0;
   }
 
   .clip-group {
