@@ -2,16 +2,16 @@ profile:
   name: Jack Walker
   photo: photos/headshot.jpeg
   photoAlt: A headshot of Jack Walker wearing a collared shirt.
-  email: jack.walker73@journalism.cuny.edu
+  email: jackwalkerwv@gmail.com
   github: jack-walk
   linkedin: jacktmwalker
+  bluesky: https://bsky.app/profile/jackwalker.bsky.social
   bio: |
-    Jack Walker is a journalist based in Brooklyn who covers topics including health, labor, social services and the LGBTQ+ community.
+    I’m a data journalist based in Brooklyn. My work has been featured in outlets like Reuters, WNYC, The Advocate, Them, Virginia Public Broadcasting and Pittsburgh’s Public Source.
 
-    Jack specializes in data journalism, but also dabbles in audio and written storytelling. He is pursuing an M.A. at the Craig Newmark School of Journalism, and also holds an M.A. and B.A. from Brown University.
+    I cover topics including government, health, LGBTQ+ rights, education and the social safety net.
 
-    Jack's work has been featured in news outlets like Reuters, WNYC, Them, The Advocate, West Virginia Public Broadcasting, and Pittsburgh's Public Source.
-
+    I attended Brown University and the CUNY Newmark School of Journalism. I’m originally from rural Maryland.
 clips:
   - slug: xmas
     title: Christmas tree disposal requests spiked last holiday

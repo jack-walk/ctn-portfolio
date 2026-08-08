@@ -19,14 +19,15 @@ Accepts a string and renders paragraphs separated by blank lines.
 {/if}
 
 <style lang="scss">
-  .now-next {
-    margin-top: var(--spacing-sm);
+  .now-next p {
+    font-family: var(--font-serif);
+    line-height: var(--leading-normal);
+    margin: 0 0 var(--spacing-xs);
+    max-width: 46rem;
+    font-size: 1rem;
   }
 
-  .now-next p {
-    line-height: var(--leading-relaxed);
-    margin: 0 0 var(--spacing-sm);
-    max-width: 46rem;
-    font-size: var(--font-size-lg);
+  .now-next p:last-child {
+    margin-bottom: 0;
   }
 </style>
