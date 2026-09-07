@@ -19,5 +19,5 @@ const theme = create({
 
 addons.setConfig({
   theme,
-  favicon: '/favicon.png',
+  favicon: '/star_transparent.png',
 });
